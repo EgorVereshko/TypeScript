@@ -1,22 +1,8 @@
 function sqrtDigits(number: number): number {
-    if (number <= 0) {
-        return -1;
+    while (number >= 10) {
+        number = number.toString().split("").map(Number).reduce((result, current) => result + current, 0)
     }
-
-    else if (number < 10) {
-        return number;
-    }
-
-    else {
-        let result = 0;
-        const digits = String(number).split("");
-
-        for (let i = 0; i < digits.length; i++) {
-            result += parseInt(digits[i])
-        }
-        
-        return sqrtDigits(result);
-    }
+    return number
 }
 
 console.log(sqrtDigits(942)) // 6
