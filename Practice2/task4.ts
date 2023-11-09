@@ -5,9 +5,9 @@ const transformSentence: SentenceTransformation = (sentence: string) => {
 
     const firstWord = words[0];
     const firstWordLength = firstWord.length;
-    const wordsWithoutFirstWord = words.filter((_, index) => index !== firstWordLength);
+    const wordsWithoutFirstWord = words.splice(firstWordLength, 1);
 
-    const transformedWords = wordsWithoutFirstWord.map(word => {
+    const transformedWords = words.map(word => {
     const firstLetter = word.charAt(0).toUpperCase();
     const restOfWord = word.slice(1);
     return firstLetter + restOfWord;
