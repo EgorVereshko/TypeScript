@@ -25,7 +25,7 @@ class MyArray<T> {
     }
 }
 
-const myArray = new MyArray<number | number[]>(1, [2, 3, [4, 5], 6]);
+const myArray = new MyArray<number | number[]>(1, [2, 3, 4, 5, 6]);
 
-console.log(myArray.areElementsEqual(1, 2)); // false
-console.log(myArray.flatten()); // [1, 2, 3, 4, 5, 6]
+console.log(myArray.areElementsEqual(1, 2));
+console.log(myArray.flatten());
